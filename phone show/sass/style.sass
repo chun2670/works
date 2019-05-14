@@ -1,0 +1,176 @@
+*
+  // border: 1px solid black
+  font-family: 'Amatic SC', '微軟正黑體'
+  position: relative
+  color: #fff
+  vertical-align: top     //貼緊上方作排列
+  user-select: none   //點按不會顯示
+  font-weight: 200
+  letter-spacing: 1px
+  
+@mixin size($w,$h)
+  width: $w
+  height: $h
+@mixin position($p,$l,$t,$transf)
+  position: $p
+  left: $l
+  top: $t
+  transform: $transf  
+  
+html,body
+  +size(100%,100%)
+  margin: 0
+  padding: 0
+  background-color: #222
+  display: flex
+  justify-content: center  //平行置中
+  align-items: center      //垂直置中
+  flex-direction: column   
+  //phone跟.state..垂直排列, 平行排列為: row
+  
+.phone
+  width: 250px
+  padding: 10px
+  background-color: #F2F2F3
+  border-radius: 15px
+  transition-duration: 0.5s  
+    //.screen裡也要加,否則會頓. 可簡寫為transition
+  left: 0px
+    //因為在JS裡有設定CSS的left,所以會頓.在此加上left: 0px即可
+.title
+  color: #f2f2f3
+  // background-color: rgba(white,0.4)
+  font-size: 40px
+  left: 15px
+.title2
+  font-size: 24px
+  color: #f2f2f3
+  left: 15px
+  
+.top
+  height: 40px
+  
+  .camera
+    +size(10px,10px)
+    border-radius: 100%   
+    background-color: #777
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+  
+.screen
+  height: 350px
+  cursor: pointer
+  transition-duration: 0.5s
+  overflow: hidden
+  .pages
+    +size(100%,100%)
+    white-space: nowrap
+    font-size: 0px   //inline-block之間會有預設換行的間隔
+    transition-duration: 0.5s
+    left: 0px
+    //因為在JS裡有設定.pages的CSS left,所以剛開始切換至page2的時候會跳一下(沒有滑動效果).在此加上left: 0px即可
+    
+    .page
+      +size(100%,100%)
+      background-color: #F9BD6E
+      background-image: url("https://i.imgur.com/kBWqbTn.jpg")
+      display: inline-block
+      //被pages綁死,所以要再到.pages設nowrap
+      font-size: initial      
+      //.pages裡的回復原狀?
+      padding: 10px
+      box-sizing: border-box  
+      //不希望padding多餘的線往外張的話就加border-box
+      white-space: normal
+      //因為.pages裡面寫nowrap, 所以這裡要寫回正常
+      
+
+      .word
+        height: 75%
+        width: 110%
+        margin: -10px
+        padding: 10px
+        background-color: #333   
+        box-sizing: border-box
+        word-wrap: break-word
+        overflow: hidden
+        
+        
+    .page1
+      background-color: #F9BD6E
+      .heart
+        +size(150px,150px)
+        background-color: rgba(#718,0.3)
+        border-radius: 100%
+        left: 70px
+        width: 260px
+        height: 260px
+        bottom: -65px
+        transform: rotate(-25deg)
+        opacity: 0.7
+        // &::before
+        //   content: ""
+        //   +size(150px,150px)
+        //   border-radius: 100%
+        //   background-color: rgba(#654,0.3)
+        //   display: block
+        //   position: absolute
+        //   left: 120px
+        //   width: 200px
+        //   height: 200px
+        // &::after
+        //   content: ""
+        //   +size(150px,150px)
+        //   background-color: rgba(#718,0.3)
+        //   display: block
+        //   position: absolute
+        //   bottom: -60px
+        //   left: 60px
+        //   transform: rotate(45deg)
+        
+      
+.bottom
+  height: 60px
+  .button
+    +size(40px,40px)
+    border-radius: 100%
+    border: 1px solid rgba(black, 0.2)
+    left: 50%
+    top: 50%
+    transform: translate(-50%,-50%)
+    cursor: pointer
+    &:hover
+      background-color: lightgrey
+    .square 
+      border: 1px solid rgba(black, 0.2)
+      box-sizing: border-box
+      //也可上網找方形符號當文字用
+      +size(17px,17px)
+      border-color: grey
+      +position(absolute,50%,50%,translate(-50%,-50%))
+        
+.phone_name
+  margin-top: -10px
+
+.btns
+  margin-top: 15px
+  
+btn
+  border: 1px solid #555
+  margin: 2px
+  padding: 6px 16px
+  border-radius: 6px
+  letter-spacing: 1px
+  font-weight: 100
+  cursor: pointer
+  font-family: '微軟正黑體'
+  &:hover
+    background-color: #fff
+    color: black
+  
+
+  
+  
+  

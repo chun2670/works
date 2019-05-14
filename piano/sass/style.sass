@@ -1,0 +1,126 @@
+$key_width: 44px
+$key_height: 300px
+$color_white: #eee
+$color_black: #585858
+@mixin size($w,$h)
+  width: $w
+  height: $h
+
+*
+  font-family: 微軟正黑體
+  backface-visibility: hidden
+  vertical-align: top
+  color: $color_black
+  // border: 1px solid #000
+html,body
+  +size(100%,100%)
+  margin: 0 auto
+  padding: 0
+  position: relative
+  width: 80%
+#app
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%,-50%)
+  width: 100%
+.center_box
+  // display: inline-block是跟著文字一起排列，所以要給它置中
+  text-align: center
+.keyboard
+  display: inline-block
+  box-shadow: 0px 0px 40px -5px rgba(0,0,0,0.4)
+  margin-bottom: 30px
+.pianokey
+  display: inline-block
+  cursor: pointer
+  
+// 8.
+// 如果這個white有playing這個class的話...讓它有壓下去的感覺
+.white.playing
+  background-color: darken($color_white,10)
+  transform: translate(0px,0px)
+.black.playing
+  background-color: lighten($color_black,5)
+  transform: translate(0px,0px)  
+  
+  
+.white
+  display: inline-block
+  position: relative
+  left: 0px
+  top: 0px
+  +size($key_width,$key_height)
+  border: 1px solid $color_white
+  transform: translate(-3px,-3px)
+  transition: 0.2s
+  &:hover
+    background-color: darken($color_white,0.3)
+    transform: translate(0px,0px)
+.black
+  position: absolute
+  +size($key_width*0.6,$key_height*0.55)
+  border: 1px solid $color_white
+  background-color: $color_black
+  // 左右外距偏移少一半寬度負數即可壓在中間
+  margin-left: -$key_width/3
+  margin-right: -$key_width/4
+  // 要用z-index，要設定position
+  position: absolute
+  z-index: 1
+  transform: translate(-3px,-3px)
+  transition: 0.1s
+  &:hover
+    background-color: darken($color_black,10)
+    transform: translate(0px,0px)          
+.label
+  position: absolute
+  bottom: -30px
+  left: 50%
+  transform: translateX(-50%)
+  color: rgba($color_black,0.5)
+
+.notes_list
+  li
+    font-size: 14px
+    display: inline-block
+    list-style: none
+    border-right: 1px solid
+    width: 40px
+    transition: 0.3s
+    &:hover
+      background-color: darken($color_white,5)
+      cursor: pointer
+    // 播放時偵測音譜且同步 +&=它正在被播放
+    &.playing
+      background-color: darken(lightblue,0.1)
+      
+    // 針對playing本體作操作，用法: 
+    //  li.playing 或
+    //  li
+    //     &.playing
+    
+.note_time
+  opacity: 0.4
+  
+button
+  background-color: transparent
+  border-radius: 5px
+  padding: 6px 12px
+  width: 100px
+  height: 45px
+  transition: 0.5s
+  &:hover
+    background-color: $color_black
+    color: white
+    cursor: pointer
+  
+.fa-microphone
+  color: #990099
+.fa-play-circle
+  color: #1919B3
+
+
+
+        
+      

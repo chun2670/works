@@ -1,0 +1,160 @@
+$color_title: #f3f9fb
+$color_label: #87c0cd
+$color_label_bg: #48698f
+$color_code: #142d4c
+$color_yellow: #F4D35E
+$color_white: #F7F5F2
+
+body
+  margin: 0
+  // 去掉瀏覽器預設的邊距
+  padding: 0
+  background-color: $color_title
+  color: $color_label_bg
+  overflow: hidden
+  // 隱藏accordion右邊多出來的部份, 及固定整個瀏覽器(無捲軸)
+
+.clear
+  clear: both
+
+#menu
+  width: 100%
+  height: 54px
+  background-color: $color_yellow
+  font-family: "微軟正黑體","Helvetica Nenu", "Helvetica", "Arial"
+
+.menu-container
+  width: 1200px
+  margin: auto
+  // 置中
+  padding-top: 15px
+  padding-left: 15px
+
+#logo
+  color: $color_label_bg
+  float: left
+  // 讓logo跟button在同一行
+  font-size: 1.7em
+  margin-left: 500px
+
+
+.button
+  float: right
+  font-size: 18px
+  width: 120px
+  border: none
+  /*邊框去掉後,padding會扣掉
+  padding: 5px
+  /*設padding補足扣掉的損失
+  border-radius: 5px
+  background-color: $color_label_bg
+  cursor: pointer
+  color: $color_white
+  /*把滑鼠箭頭圖案變: 小手指
+  /*	transition: all 3s;
+  /*定義button所有的動畫效果0.5秒
+  span
+    transition: 0.5s
+    /*0.5秒的動畫時間
+  &:hover span
+    position: relative
+    padding-right: 25px
+  span::after
+    /*表示定義button的span的"後面"的項目→"運行代碼 "文字
+    content: "\00bb"
+    /* content=字符代碼>>
+    position: absolute
+    /*絕對位置，以整個網頁為對準點
+    right: 0px
+    opacity: 0
+    /*透明度先不顯示, 等hover移進去再顯示
+    transition: 0.5s
+    /*當滑鼠移到按鈕，雙箭頭從透明度0到1的顯示動畫秒數
+  &:hover span::after
+    opacity: 1
+    /*透明度顯示
+
+/*按鈕的字樣
+
+/*設定滑鼠過去時span字樣往左移
+
+/*箭頭動畫最終值
+
+/*箭頭動畫初始值-當滑鼠移過去時..
+
+/*--------------accordion代碼輸入區--------------
+
+#accordion
+  background-color: $color_label_bg
+  width: 100%
+  height: 400px
+  margin: auto
+  /*置中
+  overflow: hidden
+  h3, div
+    display: inline-block
+    /*有自己的寬高, 又不會佔據一整行
+    text-align: center
+    /*文字置中
+    vertical-align: top
+    /*垂直樣式: 最上方
+  h3
+    background-color: $color_yellow
+    width: 400px
+    height: 36px
+    // border-radius: 10px
+    transform: rotate(270deg)
+    /*旋轉270度
+    margin: 183px 0 0 -150px
+    font-size: 24px
+    font-weight: 400
+    vertical-align: right
+  div
+    width: 340px
+    height: 400px
+    margin: 0 5px 0 -170px
+
+textarea
+  width: 100%
+  /*=code-container的100%
+  height: inherit
+  /*繼承父親的值=400px
+  resize: none
+  /*原本textarea可以調整寬高的屬性設為不可調
+  background-color: $color_code
+  border: none
+  color: $color_yellow
+  font-size: 20px
+
+.tab
+  cursor: pointer
+
+#result-container
+  background-color: $color_yellow
+  width: 100%
+
+h2
+  width: 100%
+  height: 30px
+  background-color: $color_yellow
+  margin: 0
+  text-align: center
+  font-family: "微軟正黑體", "Helvetica Nenu", "Helvetica", "Arial"
+  font-weight: normal
+  font-size: 22px
+  color: $color_label_bg
+
+iframe
+  width: 100%
+  border: none
+  background-color: $color_white
+
+.footer
+  background-color: $color_yellow
+  width: 100%
+  height: 25px
+  position: fixed
+  /*固定出現在瀏覽器上
+  bottom: 0
+  left: 0
+  padding-left: 20px

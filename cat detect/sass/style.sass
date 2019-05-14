@@ -1,0 +1,250 @@
+// debug--------------------------------
+// *
+//   border: 1px solid blue
+// header,section,.navbar
+//   display: none
+// #section_about
+//   display: block
+  
+
+$color_blue: #282f44 
+$color_brown: #e6af2e 
+$color_yellow: #f5d061
+$color_white: #ececec
+
+@mixin ab_center
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%,-50%)
+  
+
+*
+  font-family: "oswald", "微軟正黑體"
+  
+html, body
+  height: 100%
+  width: 100%
+  margin: 0
+  // transition: 0.5s
+
+  
+//- 導覽列---------------------------------
+nav
+  // border: 1px solid red
+  background-color: $color_white
+  border-bottom: none
+  font-size: 14px
+  transition: 0.5s
+  height: 45px
+  a.brand, ul
+    display: inline-block
+  a.brand
+    font-size: 20px
+    color: rgba(grey,0.8)
+    &:hover
+      color: rgba(grey,0.5)
+  .navbar-toggler
+    border-color: #ddd
+    &:hover
+      background-color: #ddd
+  .icon-bar
+    background-color: #ddd
+    display: block
+    width: 22px
+    height: 2px
+    border-radius: 1px
+    margin: 5px 0px
+  .collapse
+    justify-content: flex-end
+  a
+    text-decoration: none
+    color: rgba(grey,0.8)
+    &:hover
+      color: rgba(grey,0.5)
+      text-decoration: none
+      border: none
+  li
+    padding-left: 22px
+
+.navbar-top
+  border-bottom: 2px solid rgba(white,0.6)
+  background-color: transparent
+  a.brand
+    color: $color_white
+  a
+    color: $color_white
+  ul
+    border: none
+
+  
+// 首頁index----------------------------
+header#header_index
+  background-color: $color_blue
+  color: $color_white
+  height: 500px
+  position: relative
+  overflow: hidden
+  .index_logo
+    width: 200px
+    +ab_center
+  .index_mountain
+    position: absolute
+    bottom: 0px
+    left: -15px
+    width: 120%
+      
+  .explore
+    +ab_center
+    font-size: 16px
+    color: $color_brown
+    top: 85%
+    opacity: 0
+    transition: 0.5s
+    border-bottom: none
+    &:after
+      display: block
+      content: "v"
+      transform: scaleX(1.2) scaleY(0.5)
+      text-align: center
+    &.navbar-top
+      opacity: 1      
+      
+      
+  
+//- About-----------------------------------   
+section#section_about
+  background-color: $color_brown
+  padding-top: 30px
+  padding-bottom: 40px
+  position: relative
+  
+  .container
+    transform: scale(0.9) rotate(15deg) 
+
+  .row
+      .r1_text
+        font-size: 80px
+        transition: 0.1s
+      .r2_text
+        font-size: 35px    
+      .r3_text
+        font-size: 50px 
+        transition: 0.3s
+      .tri 
+        transform: rotate(-15deg)
+      .tri_1
+        width: 350px
+      .tri_2
+        width: 20px
+        margin-left: 10px
+      .tri_3
+        width: 150px
+        margin-left: 70%
+      .tri_4
+        width: 70px
+        margin-left: 100%
+      .tri_5
+        width: 80px
+        margin-left: 100%
+      .btn_set
+        height: 150px
+      .btn
+        +ab_center
+        transform: translate(-50%,-50%) rotate(5deg)
+  img#cat
+      width: 30%
+      max-width: 300px
+      position: absolute
+      right: 80px
+      bottom: -3px
+  #cross
+      // 設為absolute, 跟著滑鼠移動
+      position: absolute
+      &:before,&:after
+        content: ""  
+        width: 60px
+        height: 15px
+        background-color: #fff
+        display: block
+        position: absolute
+        left: 50%
+        top: 50%
+        transform: translate(-50%,-50%) rotate(45deg)
+      &:after
+        transform: translate(-50%,-50%) rotate(-45deg)
+
+      
+// Service----------------------------      
+section#section_service
+  background-color: $color_white
+  padding-bottom: 80px
+  img
+    margin-top: -5px
+    width: 60%
+  .service_center
+    text-align: center
+  .service_icon
+    width: 60%
+    margin-bottom: 20px
+  h2
+    text-align: left
+  h4
+    color: $color_brown
+  
+
+//- Contact---------------------------------
+section#section_contact
+  background-color: $color_blue
+  padding-bottom: 80px
+  position: relative
+  overflow: hidden
+  .cat
+    width: 150px
+    position: absolute
+    bottom: 10px
+    transform: translateX(-50%)
+    transition: 0.3s
+  #cat_blue
+    right: 190px
+    z-index: 1
+  #cat_yellow
+    right: 100px
+  #cat_grey
+    right: 10px
+  
+.rocks
+  margin-left: 100px
+  margin-top: -3px
+#mails
+  max-width: 500px
+  position: relative
+  z-index: 0
+  .mail_cover
+    position: absolute
+    width: 100%
+    transform: rotate(10deg)
+    z-index: -1
+  .mail_body
+    background-color: $color_white
+    padding: 20px
+    width: 90%
+    margin: 0 auto
+    label
+      display: block
+    textarea
+      width: 100%
+      height: 100px
+.contact_info
+  color: white
+  
+
+//- footer---------------------------------  
+section#section_footer
+  background-color: $color_brown
+  height: 300px
+  // width: 100%
+  position: relative
+  img
+    +ab_center
+    width: 230px

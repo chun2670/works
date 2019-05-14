@@ -1,0 +1,80 @@
+#app
+  .container_div 
+    #buylist
+      h1 待辦事項
+        i.fas.fa-feather
+      .input-group.mb-3
+        .input-group-prepend
+          span#basic-addon1.input-group-text 待辦事項
+        // 2-1 新增要新增的內容newTodo
+        // 2-5 按enter鍵也能新增
+        input.form-control(type='text', placeholder='輸入待辦事項...', v-model='newTodo', @keyup.enter='addTodo')
+        .input-group-append
+          // 2-1 新增點擊事件
+          button.btn(type='button', @click='addTodo') 新增
+      .card.text-center
+        .card-header
+          ul.nav.nav-tabs.card-header-tabs
+            li.nav-item
+              // 4-2 切換頁籤功能。class裡加"active"為=預設啟動
+              //
+                4-2 把active這個class name設為active(預設啟動狀態)，要修改的內容為visibility=all
+                class name=active。改變active這個預設啟動的狀態。物件{active, 假設visibility這個變數為all的話，就呈現啟動的狀態}
+              // 4-2 (點擊換頁) 當點擊的時候，這個visibility變數就等於all
+              a.nav-link(href='#', @click.prevent="visibility='all'", :class="{'active': visibility =='all'}") 全部
+            li.nav-item
+              // 使用 事件修飾符(.prevent)，取消 "a 連結" 的默認行為
+              a.nav-link(href='#', @click.prevent="visibility='todoing'", :class="{'active': visibility =='todoing'}") 進行中
+            li.nav-item
+              // 使用 事件修飾符(.prevent)，取消 "a 連結" 的默認行為
+              a.nav-link(href='#', @click.prevent="visibility='done'", :class="{'active': visibility =='done'}") 已完成
+        ul.list-group.list-group-flush.text-left
+          // 2-1 定義列表v-for
+          // 3-2 key是陣列的索引位置
+          // 4-3 把原本的todos換成filteredTodos。原本的todos資料不會變
+          // 5-1 雙點，修改li的資料內容  dblclick=double click雙擊。並且把原本todo的內容(item)傳進來
+          li.list-group-item(v-for='(item,key) in filteredTodos', @dblclick='editTodo(item)')
+            //
+              5-2 因為原本li的內容跟雙擊後的編輯input，兩者只能出現一個。
+              所以設定如果item的id不等於cacheTodo的id，就讓它顯示出來...(接續下方input 5-2)
+            .d-flex(v-if='item.id !== cacheTodo.id')
+              .form-check
+                // 2-2 綁定。把input跟label的id 及 for, v-bind:改成同一個id，才能一起綁定。用意是點擊title也能勾選id的checkbox。
+                // 2-2 綁定completed來操作已完成或未完成
+                input.form-check-input(type='checkbox', :id='item.id', v-model='item.completed')
+                // 4-1 點選打勾，文字出現刪除線 綁定css的:class{'綁定的css名稱': 要修改的內容true}
+                label.form-check-label(:for='item.id', :class="{ 'completed-LineThrough': item.completed}")
+                  // 2-1在列表顯示輸入的內容
+                  | {{ item.title }}
+              // 3-2 點XX刪除事件
+              // 3-2 點click傳送時，會同事把陣列的索引(key)傳過來
+              // 6-1 刪除修正，原本removeTodo(key)，改成(item)
+              button.close.ml-auto(type='button', aria-label='Close', @click='removeTodo(item)')
+                span(aria-hidden='true') ×
+            // 5-2 如果cacheTodo預存的id等於item.id的話，就顯示此input，並且把class="d-flex"裡全部的程式碼隱藏起來
+            // 5-2 把cachetitle跟li的內容做雙向綁定
+            input.form-control(type='text', v-if='item.id == cacheTodo.id', v-model='cacheTitle', @keyup.esc='cancelEdit()', @keyup.enter='doneEdit(item)')
+          //
+            <li class="list-group-item">
+            <div class="d-flex">
+            <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="a1">
+            <label class="form-check-label completed" for="a1">
+            Cras justo odio
+            </label>
+            </div>
+            <button type="button" class="close ml-auto" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            </li>
+          // 5-1 即將套用的編輯input輸入框
+          //
+            <li class="list-group-item">
+            <input type="text" class="form-control">
+            </li>
+        .card-footer.d-flex.justify-content-between
+          span.count_todo 還有 {{notDoneTodo}} 筆任務未完成
+          span
+          // 使用 事件修飾符(.prevent)，取消 "a 連結" 的默認行為
+          a.clean_all(href='#', @click.prevent='cleanAll') 清除所有任務

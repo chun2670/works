@@ -1,0 +1,24 @@
+#menu
+  .menu-container
+    // 裝logo及button
+    #logo Web Code 編譯器
+    button#runCode.button(type='button', name='button')
+      span 運行
+      // 另設span為了單獨設定字的CSS
+.clear
+ul#accordion
+  h3#html-code.tab HTML
+  .code-container
+    textarea#html-code <h3>Try to write some code and push the '運行' button!</h3>
+  h3#css-code.tab CSS
+  .code-container
+    textarea#css-code h3{color: purple}
+  h3#js-code.tab JavaScript
+  .code-container
+    textarea#js-code
+.clear
+#result-container
+  h2 Result
+  iframe#result-frame
+.clear
+.footer Footer

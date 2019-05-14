@@ -1,0 +1,133 @@
+@charset "UTF-8";
+* {
+  font-family: 微軟正黑體;
+  backface-visibility: hidden;
+  vertical-align: top;
+  color: #585858;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  width: 80%;
+}
+
+#app {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.center_box {
+  text-align: center;
+}
+
+.keyboard {
+  display: inline-block;
+  box-shadow: 0px 0px 40px -5px rgba(0, 0, 0, 0.4);
+  margin-bottom: 30px;
+}
+
+.pianokey {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.white.playing {
+  background-color: #d5d5d5;
+  transform: translate(0px, 0px);
+}
+
+.black.playing {
+  background-color: #656565;
+  transform: translate(0px, 0px);
+}
+
+.white {
+  display: inline-block;
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 44px;
+  height: 300px;
+  border: 1px solid #eee;
+  transform: translate(-3px, -3px);
+  transition: 0.2s;
+}
+.white:hover {
+  background-color: #ededed;
+  transform: translate(0px, 0px);
+}
+
+.black {
+  position: absolute;
+  width: 26.4px;
+  height: 165px;
+  border: 1px solid #eee;
+  background-color: #585858;
+  margin-left: -14.6666666667px;
+  margin-right: -11px;
+  position: absolute;
+  z-index: 1;
+  transform: translate(-3px, -3px);
+  transition: 0.1s;
+}
+.black:hover {
+  background-color: #3f3f3f;
+  transform: translate(0px, 0px);
+}
+
+.label {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(88, 88, 88, 0.5);
+}
+
+.notes_list li {
+  font-size: 14px;
+  display: inline-block;
+  list-style: none;
+  border-right: 1px solid;
+  width: 40px;
+  transition: 0.3s;
+}
+.notes_list li:hover {
+  background-color: #e1e1e1;
+  cursor: pointer;
+}
+.notes_list li.playing {
+  background-color: lightblue;
+}
+
+.note_time {
+  opacity: 0.4;
+}
+
+button {
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 6px 12px;
+  width: 100px;
+  height: 45px;
+  transition: 0.5s;
+}
+button:hover {
+  background-color: #585858;
+  color: white;
+  cursor: pointer;
+}
+
+.fa-microphone {
+  color: #990099;
+}
+
+.fa-play-circle {
+  color: #1919B3;
+}

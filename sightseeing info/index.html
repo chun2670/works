@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Work5. JS+JSON+bootstrap</title>
+  
+  
+  <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.7.2/flexslider.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<header class="text-center d-flex justify-content-center align-items-center">
+  <h1>台灣觀光景點資訊</h1>
+  <select id="areas" name="areas">
+    <option value="---請選擇地區---" selected="" disabled="disabled">--- 請選擇地區 ---</option>
+    <option value="新竹">新竹縣/市</option>
+    <option value="嘉義">嘉義縣/市</option>
+    <option value="澎湖縣">澎湖縣</option>
+    <option value="新北市">新北市</option>
+  </select>
+  <!-- mt=margin-top-->
+  <div class="btns-group m-0">
+    <p>按鈕快選</p>
+    <button class="btn" value="新竹">新竹縣/市</button>
+    <!-- <input type="button" value="新竹" class="btn" name="新竹縣/市" >-->
+    <button class="btn" type="button" value="嘉義">嘉義縣/市</button>
+    <button class="btn" type="button" value="澎湖縣">澎湖縣</button>
+    <button class="btn" type="button" value="新北市">新北市</button>
+  </div>
+</header>
+<section class="container mt-4 content">
+  <div class="row list"></div>
+</section>
+<footer class="text-center">©2019 政府資料開放平台 DATA.GOV.TW<br/>資料來源：國家發展委員會</footer>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.3/jquery.flexslider.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

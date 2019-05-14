@@ -1,0 +1,163 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f3f9fb;
+  color: #48698f;
+  overflow: hidden;
+}
+
+.clear {
+  clear: both;
+}
+
+#menu {
+  width: 100%;
+  height: 54px;
+  background-color: #F4D35E;
+  font-family: "微軟正黑體", "Helvetica Nenu", "Helvetica", "Arial";
+}
+
+.menu-container {
+  width: 1200px;
+  margin: auto;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+#logo {
+  color: #48698f;
+  float: left;
+  font-size: 1.7em;
+  margin-left: 500px;
+}
+
+.button {
+  float: right;
+  font-size: 18px;
+  width: 120px;
+  border: none;
+  /*邊框去掉後,padding會扣掉 */
+  padding: 5px;
+  /*設padding補足扣掉的損失 */
+  border-radius: 5px;
+  background-color: #48698f;
+  cursor: pointer;
+  color: #F7F5F2;
+  /*把滑鼠箭頭圖案變: 小手指 */
+  /*	transition: all 3s; */
+  /*定義button所有的動畫效果0.5秒 */
+}
+.button span {
+  transition: 0.5s;
+  /*0.5秒的動畫時間 */
+}
+.button:hover span {
+  position: relative;
+  padding-right: 25px;
+}
+.button span::after {
+  /*表示定義button的span的"後面"的項目→"運行代碼 "文字 */
+  content: "»";
+  /* content=字符代碼>> */
+  position: absolute;
+  /*絕對位置，以整個網頁為對準點 */
+  right: 0px;
+  opacity: 0;
+  /*透明度先不顯示, 等hover移進去再顯示 */
+  transition: 0.5s;
+  /*當滑鼠移到按鈕，雙箭頭從透明度0到1的顯示動畫秒數 */
+}
+.button:hover span::after {
+  opacity: 1;
+  /*透明度顯示 */
+}
+
+/*按鈕的字樣 */
+/*設定滑鼠過去時span字樣往左移 */
+/*箭頭動畫最終值 */
+/*箭頭動畫初始值-當滑鼠移過去時.. */
+/*--------------accordion代碼輸入區-------------- */
+#accordion {
+  background-color: #48698f;
+  width: 100%;
+  height: 400px;
+  margin: auto;
+  /*置中 */
+  overflow: hidden;
+}
+#accordion h3, #accordion div {
+  display: inline-block;
+  /*有自己的寬高, 又不會佔據一整行 */
+  text-align: center;
+  /*文字置中 */
+  vertical-align: top;
+  /*垂直樣式: 最上方 */
+}
+#accordion h3 {
+  background-color: #F4D35E;
+  width: 400px;
+  height: 36px;
+  transform: rotate(270deg);
+  /*旋轉270度 */
+  margin: 183px 0 0 -150px;
+  font-size: 24px;
+  font-weight: 400;
+  vertical-align: right;
+}
+#accordion div {
+  width: 340px;
+  height: 400px;
+  margin: 0 5px 0 -170px;
+}
+
+textarea {
+  width: 100%;
+  /*=code-container的100% */
+  height: inherit;
+  /*繼承父親的值=400px */
+  resize: none;
+  /*原本textarea可以調整寬高的屬性設為不可調 */
+  background-color: #142d4c;
+  border: none;
+  color: #F4D35E;
+  font-size: 20px;
+}
+
+.tab {
+  cursor: pointer;
+}
+
+#result-container {
+  background-color: #F4D35E;
+  width: 100%;
+}
+
+h2 {
+  width: 100%;
+  height: 30px;
+  background-color: #F4D35E;
+  margin: 0;
+  text-align: center;
+  font-family: "微軟正黑體", "Helvetica Nenu", "Helvetica", "Arial";
+  font-weight: normal;
+  font-size: 22px;
+  color: #48698f;
+}
+
+iframe {
+  width: 100%;
+  border: none;
+  background-color: #F7F5F2;
+}
+
+.footer {
+  background-color: #F4D35E;
+  width: 100%;
+  height: 25px;
+  position: fixed;
+  /*固定出現在瀏覽器上 */
+  bottom: 0;
+  left: 0;
+  padding-left: 20px;
+}

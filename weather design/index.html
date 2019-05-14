@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Wrok4. Sass+SVG+Animation+keyframes</title>
+  
+  
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Fjalla+One|Hind|Hind+Vadodara"rel="stylesheet'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<div class="daybox">
+  <label> 
+    <input id="switch_night" type="checkbox"/>
+    <div class="top">
+      <div class="moon"></div>
+      <div class="text_area">
+        <div class="temperature">26°C</div>
+        <div class="infos"> 
+          <div class="locate">新竹市香山區浸水里</div>
+          <div class="time">星期一 14:00</div>
+        </div>
+      </div>
+      <div class="cloud">
+        <div class="rain"></div>
+        <div class="rain rain2"></div>
+        <div class="rain rain3"></div>
+      </div>
+      <svg class="temsvg">
+        <circle cx="0" cy="50" r="3"></circle>
+        <text x="0" y="50">26°      </text>
+        <circle cx="70" cy="20" r="3"></circle>
+        <text x="70" y="20">28°       </text>
+        <circle cx="140" cy="40" r="3"></circle>
+        <text x="140" y="40">27°        </text>
+        <circle cx="210" cy="60" r="3"></circle>
+        <text x="210" y="60">25°       </text>
+        <circle cx="280" cy="40" r="3"></circle>
+        <text x="280" y="40">27°     </text>
+        <circle cx="350" cy="50" r="3"></circle>
+        <text x="350" y="50">26°      </text>
+        <circle cx="420" cy="20" r="3"></circle>
+        <text x="420" y="20">26°</text>
+        <polyline points="0,50 70,20 140,40 210,60 280,40 350,50 420,20"></polyline>
+      </svg>
+    </div>
+    <div class="bottom">
+      <div class="dayweather">      
+        <h3>MON</h3>
+        <svg viewbox="-50 -50 100 100">
+          <circle class="sun" cx="0" cy="0" r="22">       </circle>
+        </svg>
+      </div>
+      <div class="dayweather">
+        <h3>TUE</h3>
+        <svg viewbox="-50 -50 100 100">
+          <circle class="sun" cx="0" cy="0" r="22"></circle>
+        </svg>
+      </div>
+      <div class="dayweather">
+        <h3>WED</h3>
+        <svg viewbox="-50 -50 100 100">
+          <circle class="sun" cx="0" cy="0" r="22"></circle>
+          <circle class="cloud" cx="0" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-15" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-30" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-25" cy="10" r="15"></circle>
+          <circle class="cloud" cx="-7" cy="15" r="15"></circle>
+        </svg>
+      </div>
+      <div class="dayweather">
+        <h3>THU</h3>
+        <svg viewbox="-50 -50 100 100">
+          <circle class="sun" cx="0" cy="0" r="22"></circle>
+          <circle class="cloud" cx="0" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-15" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-30" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-25" cy="10" r="15"></circle>
+          <circle class="cloud" cx="-7" cy="15" r="15"></circle>
+        </svg>
+      </div>
+      <div class="dayweather">
+        <h3>FRI</h3>
+        <svg viewbox="-50 -50 100 100">
+          <circle class="sun" cx="0" cy="0" r="22"></circle>
+        </svg>
+      </div>
+      <div class="dayweather">
+        <h3>SAT</h3>
+        <svg viewbox="-65 -30 100 100">
+          <circle class="cloud" cx="0" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-15" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-30" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-25" cy="10" r="15"></circle>
+          <circle class="cloud" cx="-7" cy="15" r="15">      </circle>
+        </svg>
+      </div>
+      <div class="dayweather">
+        <h3>SUN</h3>
+        <svg viewbox="-65 -30 100 100">
+          <line class="rain" x1="-25" y1="15" x2="-25" y2="35"></line>
+          <line class="rain" x1="-14" y1="5" x2="-14" y2="25"></line>
+          <line class="rain" x1="-5" y1="20" x2="-5" y2="45"> </line>
+          <circle class="cloud" cx="0" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-15" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-30" cy="30" r="20"></circle>
+          <circle class="cloud" cx="-25" cy="10" r="15"></circle>
+          <circle class="cloud" cx="-7" cy="15" r="15"></circle>
+        </svg>
+      </div>
+    </div>
+  </label>
+</div>
+  
+  
+
+</body>
+
+</html>

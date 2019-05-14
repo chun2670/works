@@ -1,0 +1,159 @@
+@charset "UTF-8";
+* {
+  font-family: "Amatic SC", "微軟正黑體";
+  position: relative;
+  color: #fff;
+  vertical-align: top;
+  user-select: none;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.phone {
+  width: 250px;
+  padding: 10px;
+  background-color: #F2F2F3;
+  border-radius: 15px;
+  transition-duration: 0.5s;
+  left: 0px;
+}
+
+.title {
+  color: #f2f2f3;
+  font-size: 40px;
+  left: 15px;
+}
+
+.title2 {
+  font-size: 24px;
+  color: #f2f2f3;
+  left: 15px;
+}
+
+.top {
+  height: 40px;
+}
+.top .camera {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: #777;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.screen {
+  height: 350px;
+  cursor: pointer;
+  transition-duration: 0.5s;
+  overflow: hidden;
+}
+.screen .pages {
+  width: 100%;
+  height: 100%;
+  white-space: nowrap;
+  font-size: 0px;
+  transition-duration: 0.5s;
+  left: 0px;
+}
+.screen .pages .page {
+  width: 100%;
+  height: 100%;
+  background-color: #F9BD6E;
+  background-image: url("https://i.imgur.com/kBWqbTn.jpg");
+  display: inline-block;
+  font-size: initial;
+  padding: 10px;
+  box-sizing: border-box;
+  white-space: normal;
+}
+.screen .pages .page .word {
+  height: 75%;
+  width: 110%;
+  margin: -10px;
+  padding: 10px;
+  background-color: #333;
+  box-sizing: border-box;
+  word-wrap: break-word;
+  overflow: hidden;
+}
+.screen .pages .page1 {
+  background-color: #F9BD6E;
+}
+.screen .pages .page1 .heart {
+  width: 150px;
+  height: 150px;
+  background-color: rgba(119, 17, 136, 0.3);
+  border-radius: 100%;
+  left: 70px;
+  width: 260px;
+  height: 260px;
+  bottom: -65px;
+  transform: rotate(-25deg);
+  opacity: 0.7;
+}
+
+.bottom {
+  height: 60px;
+}
+.bottom .button {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.bottom .button:hover {
+  background-color: lightgrey;
+}
+.bottom .button .square {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  width: 17px;
+  height: 17px;
+  border-color: grey;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.phone_name {
+  margin-top: -10px;
+}
+
+.btns {
+  margin-top: 15px;
+}
+
+btn {
+  border: 1px solid #555;
+  margin: 2px;
+  padding: 6px 16px;
+  border-radius: 6px;
+  letter-spacing: 1px;
+  font-weight: 100;
+  cursor: pointer;
+  font-family: "微軟正黑體";
+}
+btn:hover {
+  background-color: #fff;
+  color: black;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Work7. jQuery+jQuery UI代碼播放器</title>
+  
+  
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-bootstrap/0.5pre/assets/css/bootstrap.min.css'>
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  
+<div id="menu">
+  <div class="menu-container">
+    <!-- 裝logo及button-->
+    <div id="logo">Web Code 編譯器</div>
+    <button class="button" id="runCode" type="button" name="button"><span>運行</span>
+      <!-- 另設span為了單獨設定字的CSS-->
+    </button>
+  </div>
+</div>
+<div class="clear"></div>
+<ul id="accordion">
+  <h3 class="tab" id="html-code">HTML</h3>
+  <div class="code-container">
+    <textarea id="html-code"><h3>Try to write some code and push the '運行' button!</h3></textarea>
+  </div>
+  <h3 class="tab" id="css-code">CSS</h3>
+  <div class="code-container">
+    <textarea id="css-code">h3{color: purple}</textarea>
+  </div>
+  <h3 class="tab" id="js-code">JavaScript</h3>
+  <div class="code-container">
+    <textarea id="js-code"></textarea>
+  </div>
+</ul>
+<div class="clear"></div>
+<div id="result-container">
+  <h2>Result</h2>
+  <iframe id="result-frame"></iframe>
+</div>
+<div class="clear"></div>
+<div class="footer">Footer</div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

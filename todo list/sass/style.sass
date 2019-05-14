@@ -1,0 +1,87 @@
+$color_purple: #643173
+$color_yellow: #FDC128 
+
+$color_black: #FFCC00  
+$color_yellow: #FFCC00 
+$color_red: #643173
+$color_white: #f3f3f3
+
+.completed-LineThrough
+  text-decoration: line-through 
+  
+*
+  // border: 1px solid blue
+  font-family: "微軟正黑體"
+  font-weight: 900
+  border-radius: 4px
+  // color: #424342
+  // letter-spacing: 2px
+
+body, html
+  margin: auto
+  padding: 0
+  // position: relative
+  // 新的置中方式
+  // display: flex
+  // justify-content: center
+  // align-items: center
+  background-color: $color_yellow
+ 
+.container_div
+  margin-top: 50px
+  padding: 0
+  background-color: red
+  position: relative
+
+  #buylist
+    // 新的置中方式
+    // display: inline-block
+    // 舊的置中方式
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+
+    width: 450px
+    padding: 20px
+    margin-bottom: 50px
+    background-color: $color_white
+    box-shadow: 12px 10px 10px rgba( 0,0,0,0.4)
+    border-radius: 8px
+
+    h1
+      height: 80px
+      padding: 23px
+      margin: -20px -20px 10px -20px 
+      // border-bottom: 3px solid $color_black
+      background-color: $color_purple
+      box-sizing: border-box
+      color: $color_white
+      font-weight: 500
+      font-size: 28px
+      text-align: center
+      letter-spacing: 2px
+      border: none
+        
+    .btn
+      background-color: $color_purple
+      color: $color_white
+
+    .input-group
+      margin-top: 30px
+    
+    .list-group-item
+      color: #6C757D
+    
+    .nav-link
+      color: $color_purple
+      
+.card-footer
+  background-color: $color_purple
+.count_todo
+  color: $color_white
+  font-weight: 400
+.clean_all
+  color: $color_yellow
+  font-size: 15px
+
+    

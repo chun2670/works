@@ -1,0 +1,59 @@
+#app
+  .audioplayer(v-for="s in sounddata")
+    //- 顯示陣列裡的number數字label {{s.number}}
+    //- v-bind特殊指令不用{大括號}。綁定"屬性值"→把每個音符檔的值套用進去
+    //- audio(controls)可以顯示音樂控製器 
+    audio(v-bind:data-num="s.number") 
+      //- v-bind=特殊指令=不用加大括號
+      source(v-bind:src="s.url")
+  //- 7. 設定鋼琴鍵盤
+  .center_box
+    h2 Piano
+    .keyboard
+      .pianokey(v-for="s in display_keys")
+        //- 8. 顯示音譜。播放時同步音譜跟琴鍵顏色
+        //- 這筆資料type="white"才會顯示
+        //- v-on點選，讓每個鍵對應播放音樂檔的num,音量
+        //- v-blind..此琴鍵抓取正在播放的音鍵,?如果現在正在彈這個音的話，給它playing的class，:如果不是，就給它空白值
+        //- 9. 用鍵盤點選的琴鍵同步顯示顏色
+        .white(v-if='s.type==\"white\"' 
+               v-on:click="addnote(s.num)"
+               v-bind:class = '[(playing_time&&get_current_highlight(s.num) )||(now_press_key==s.key)?\"playing\":\"\"]')
+          //- 搜尋js ascii to char
+          //- .label {{s.key}}
+          .label {{String.fromCharCode(s.key)}}
+        .black(v-if='s.type==\"black\"' 
+               v-on:click="addnote(s.num,1)"
+               v-bind:class = '[(playing_time&&get_current_highlight(s.num) )||(now_press_key==s.key)?\"playing\":\"\"]') 
+          .label {{String.fromCharCode(s.key)}}
+    br
+    br
+    .controls
+      //- 8. 顯示音譜。播放時同步音譜
+      //- 在此陣列大於0的情況上，notes才會跑出來 
+      ul.notes_list(v-if="notes.length>0")
+        //- 正在播放的位置-1會等於id。 
+        //- 抓id出來。在note in notes裡同時抓note跟id出來
+          //- 如果我正在播放的這個音=id的話。?如果這個成立就會採用playing
+          //- \"斜線+雙引號=一般字元。否則太多雙引號會抓不到字元，顯示錯誤
+        li(v-for="(note,id) in notes" 
+          v-bind:class='now_note_id-1==id?\"playing\":\"\"'
+        )
+          //- 滑鼠移到音譜上，播放其音樂檔
+          .note_num(v-on:mouseover = 'playnote(note.num,1)') {{note.num}} 
+          .note_time {{note.time}}
+      //- Sample
+      button(v-on:click="load_sample") Sample
+      //-6. 把播放鍵設成按鈕     
+      button(v-on:click="playnext(1)") Play Next
+      //- 如果正在播放的時間小於等於0的話，按鈕就顯示Play, 如果大於0，就顯示stop
+      button.fas.fa-play-circle(v-on:click="startplay" v-if="playing_time<=1")  Play
+      
+      button.fas.fa-stop-circle(v-on:click="stopplay" v-if="playing_time>1")  Stop  
+      //- 10.錄音
+      button.fas.fa-microphone(v-on:click="start_record" v-if="record_time<=0")  Record
+      button.fas.fa-microphone-slash(v-on:click="stop_record" v-if="record_time>=1")  Stop Record
+      //- 10. 錄音-清除. 所有的notes資料被清空
+      button(v-on:click="notes=[]") Clear 
+      //- playing_time跟record_time不會同時執行，其中一個一定是0。所以寫加在一起也沒關係
+      h4 {{playing_time+record_time}}

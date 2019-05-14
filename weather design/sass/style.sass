@@ -1,0 +1,245 @@
+$color_white: #f3f3f3
+$color_yellow: #FFD633
+$color_black: #222
+$color_blue_start: #19283D
+$color_blue_end: #1D678F
+$color_rain: #4DACFF
+$color_white_cloud: #f2f9fe
+$color_grey_cloud: #ccc
+
+@mixin size($w, $h)
+  width: $w
+  height: $h
+
+*
+  // border: 1px solid
+  position: relative
+  font-family: 'Hind Vadodara', sans-serif, "微軟正黑體"
+
+
+body,html
+  +size(100%,100%)
+  margin: 0
+  padding: 0
+  display: flex     //針對body裡面的東西作設定
+  justify-content: center  //**左右排列左右置中**//
+  align-items: center     // **上下排列垂直置中**
+  background-color: $color_black
+    
+label
+  cursor: pointer
+
+.daybox
+  width: 400px
+  min-width: 400px
+  background-color: $color_white
+  border-radius: 5px
+  position: absolute
+  overflow: hidden
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.2), 0px 25px 60px -10px rgba(0,0,0,0.3)
+  cursor: pointer
+  transition-duration: 2s
+  
+  &:hover
+    .bottom
+      height: 125px
+    .dayweather
+      opacity: 1
+      top: 0px
+      transition-delay: 0.5s
+
+    .dayweather:nth-child(1)
+      transition-delay: 0.2s
+    .dayweather:nth-child(2)
+      transition-delay: 0.3s
+    .dayweather:nth-child(3)
+      transition-delay: 0.4s
+    .dayweather:nth-child(4)
+      transition-delay: 0.5s
+    .dayweather:nth-child(5)
+      transition-delay: 0.6s
+    .dayweather:nth-child(6)
+      transition-delay: 0.7s
+    .dayweather:nth-child(7)
+      transition-delay: 0.8s    
+      
+.top
+  height: 330px
+  background: linear-gradient(20deg, $color_blue_start, $color_blue_end)
+      // 用background: 漸層(角度, 開始的顏色, 結束的顏色)
+  background-size: 100% 300%  //讓漸層圖片放大放遠
+  animation: daylight 10s both  //both前後填滿,不會到第10秒就重複跳轉回剛開始
+  border-radius: 5px 5px 0px 0px
+  
+  @keyframes daylight
+    0%
+      background-position: 100% 30%
+    100%
+      background-position: 100% 100%
+  
+  .temsvg
+    width: 100%
+    stroke: $color_white
+    transition-duration: 0.5s
+    polyline
+      stroke-width: 1px
+      fill: none
+      transition: 0.5s 0.2s   
+      opacity: 0.3
+    text
+      transform: translateX(-8px) translateY(20px)
+      font-size: 10px
+      font-weight: 100
+      opacity: 0
+      transition: 0.5s 0.5s
+    circle
+      fill: $color_white
+      opacity: 0.3
+      transition: 0.5s      
+      
+  .moon
+    +size(50px,50px)
+    border-radius: 100%
+    box-shadow: 15px -15px
+    top: 100px
+    left: 50px
+    animation: moonmove 20s infinite
+    transition-duration: 1s
+    
+  @keyframes moonmove
+    0%
+      box-shadow: 15px -15px $color_yellow
+      transform: translateX(-15px) translateY(15px)
+      // 陰影跟transdform 15, -15兩個位移一正一負, 陰影就不會動
+    100%
+      box-shadow: -30px 30px $color_yellow
+      transform: translateX(30px) translateY(-30px)      
+      
+  .text_area
+    position: absolute
+    bottom: 25px
+    left: 27px
+    color: $color_white
+    
+    .temperature
+      font-size: 75px
+      line-height: 80px
+      
+    .infos
+      font-size: 13px
+      opacity: 0.5
+      
+  .cloud
+    +size(100px,36px)
+    border-radius: 20px
+    position: absolute
+    left: 220px
+    bottom: 50px
+    animation: move_cloud 3s infinite
+    background-color: $color_white
+    box-shadow: 0px 0px 20px rgba(black,0.5)
+    transition-duration: 1s
+
+    
+    &::before,&::after
+      content: ""
+      display: block
+      //content+block=可當一般的div操作
+      +size(50px,50px)
+      // border: 1px solid   
+      //before, after為假的元素，所以要加上框才看得到
+      border-radius: 100%
+      position: absolute
+      left: 16px
+      top: -28px   
+      background-color: $color_white
+    &::after
+      top: -20px
+      left: 35px
+    
+    @keyframes move_cloud
+      0%
+        bottom: 50px
+      50%
+        bottom: 40px    
+      100%
+        bottom: 50px
+      
+.rain               
+  //講師.rain放在跟.top同一層
+  +size(2px,10px)
+  left: 25px
+  position: absolute
+  animation: drop_rain 1s infinite linear     
+  background-color: $color_white
+.rain2
+  left: 35px
+  animation-delay: -0.3s
+  // 秒數加負號表示在頁面載入之前就開始放,否則載入會先停頓一下   
+.rain3
+  left: 70px
+  animation-delay: -0.8s
+
+@keyframes drop_rain
+  0%
+    bottom: 0px
+  100%
+    bottom: -60px
+    opacity: 0
+      
+  
+.bottom
+  height: 15px
+  display: flex
+  justify-content: center
+  box-shadow: 0px 0px 20px rgba(black,0.5)
+  border-radius: 5px
+  // overflow: hidden 無效?
+  transition-duration: 1.5s
+
+  .dayweather
+    width: calc(100% / 7 - 5px)
+    box-sizing: border-box
+    text-align: center
+    padding: 2px
+    margin-top: 10px
+    opacity: 0
+    top: 20px
+    transition: 0.5s
+    
+    h3
+      font-size: 8px
+      color: rgba($color_black, 0.6)
+      font-weight: 400
+      letter-spacing: 1px      
+      
+    svg
+      width: 100%
+      height: 40px
+      max-width: 40px
+      .sun
+        fill: $color_yellow        
+        stroke: rgba($color_yellow,0.5)
+        stroke-width: 20px
+        stroke-dasharray: 4px
+      .rain
+        stroke: $color_rain
+      .cloud
+        fill: $color_grey_cloud
+
+
+#switch_night:checked+.top
+  .cloud
+    opacity: 0.3
+  .moon
+    opacity: 0.3
+  .temsvg
+    text,circle
+      opacity: 0.8
+    polyline
+      opacity: 0.7
+
+#switch_night
+  display: none 
+
+  

@@ -1,0 +1,124 @@
+//- 導覽列---------------------------------
+//.navbar-top為CSS設定
+nav.navbar.navbar-expand-sm.fixed-top.navbar-top
+  .container
+    a.brand(href="#") Yellow Studio
+    //- 漢堡功能=.navbar-toggler
+    //- collapse=下拉展開後的選單
+    //- aria為盲人友善閱讀
+    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarTogglerDemo02', aria-controls='navbarTogglerDemo02', aria-expanded='false', aria-label='Toggle navigation')
+      //- 漢堡圖案的三條線
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+      
+    #navbarTogglerDemo02.collapse.navbar-collapse
+      ul.navbar.navbar-nav
+        li.nav-item
+          a(href="#section_about") About
+        li.nav-item
+          a(href="#section_service") Service
+        li.nav-item
+          a(href="#section_contact") Contact
+ 
+
+//- 首頁---------------------------------
+header#header_index
+  .container
+    img.index_logo(src="https://awiclass.monoame.com/img/webpic/w_icon.svg" )
+    img.index_mountain(src="https://awiclass.monoame.com/img/margin/m_index.svg")
+  .navbar-top.explore EXPLORE
+      
+
+//- About-----------------------------------   
+section#section_about
+  .container
+    .row
+      //- col-sm-offset-4最前面的4格白
+      .col-sm-4
+      .col-sm-8
+        img.tri.tri_1(src="https://awiclass.monoame.com/img/webpic/w_tri1.svg")
+        h2.r1_text WORKS IN YELLOW
+
+    .row
+      .col-sm-4
+        img.tri.tri_2(src="https://awiclass.monoame.com/img/webpic/w_tri2.svg")
+      .col-sm-8
+        img.tri.tri_3(src="https://awiclass.monoame.com/img/webpic/w_tri3.svg")
+        h3.r2_text YELLOW STUDIO-Website Design / Development
+        h3.r2_text Interactive Art Design
+
+    .row
+      .col-sm-8
+        h2.r3_text 430 MORE SUCCESS CASES
+
+    .row
+      .col-sm-4.btn_set
+        .btn.btn-lg.btn-danger(href="#section_works") MORE STORY
+        img.tri.tri_4(src="https://awiclass.monoame.com/img/webpic/w_tri4.svg")
+      .col-sm-4
+        img.tri.tri_5(src="https://awiclass.monoame.com/img/webpic/w_tri5.svg")
+
+  img#cat(src="http://awiclass.monoame.com/catpic/cat_leftop.png")
+  #cross
+  
+  
+//- Service---------------------------------
+section#section_service
+  .container
+      img(src="https://awiclass.monoame.com/img/margin/m_about.svg")
+      h2 Service
+      .row.service_center
+        .col-sm-4
+          img.service_icon(src="https://awiclass.monoame.com/img/webpic/w_service_icon1.svg")
+          h4 CI/VI Design
+        .col-sm-4
+          img.service_icon(src="https://awiclass.monoame.com/img/webpic/w_service_icon2.svg")
+          h4 MotionGraphic
+        .col-sm-4
+          img.service_icon(src="https://awiclass.monoame.com/img/webpic/w_service_icon3.svg")
+          h4 Web Development
+
+
+//- Works---------------------------------
+
+
+
+
+
+//- Contact---------------------------------
+section#section_contact
+  img.cat#cat_blue(src="http://awiclass.monoame.com/catpic/cat_blue_cat.png")
+  img.cat#cat_yellow(src="http://awiclass.monoame.com/catpic/cat_yellow_cat.png")
+  img.cat#cat_grey(src="http://awiclass.monoame.com/catpic/cat_grey_cat.png")
+  .container
+      .col-sm-12
+        img.rocks(src="https://awiclass.monoame.com/img/margin/m_works.svg")
+
+      .col-sm-12
+        .row
+          .col-sm-6.contact_one
+            #mails
+              .mail_cover
+                img(src="https://awiclass.monoame.com/img/webpic/w_mail_cover.svg")
+              .mail_body
+                h5 Dear Yellow Studio
+                label Name
+                input
+                label Email
+                input
+                label Content
+                textarea
+          .col-sm-6.contact_info
+            h2 CONTACT
+            br
+            p If you have any question about us,<br> Don`t hestitate to contact us !<br><br>
+            p YELLOWSTUDIO@gmail.com<br> ADDRESS: TAIWAN, TAIPEI , XORO Road<br> Phone: 02-12345678
+
+
+//- footer---------------------------------
+section#section_footer
+  .container
+    img(src="https://awiclass.monoame.com/img/webpic/w_icon_black.svg")
+
+

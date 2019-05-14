@@ -1,0 +1,199 @@
+@charset "UTF-8";
+* {
+  font-family: "微軟正黑體";
+}
+
+body, hmtl {
+  margin: 40px auto;
+  width: 900px;
+  background: linear-gradient(-45deg, #FFE18D 10%, #FFE18D 10%, #FFDA71 10%, #FFDA71 40%, #FFE18D 40%, #FFE18D 60%, #FFDA71 60%, #FFDA71 90%, #FFE18D 90%, #FFE18D 100%);
+  background-size: 46px 46px;
+  margin-bottom: 30px;
+}
+
+.logo img {
+  width: 130px;
+  display: inline-block;
+}
+
+h2 {
+  display: inline-block;
+  font-weight: 400;
+}
+
+.dis_input {
+  margin-right: 14px;
+  margin-left: 0;
+}
+
+#app {
+  width: 100%;
+}
+#app #control_info {
+  padding-left: 36px;
+  margin-bottom: 26px;
+}
+#app .show_dis {
+  padding-right: 10px;
+}
+#app label {
+  font-size: 18px;
+  line-height: 32px;
+  cursor: pointer;
+}
+
+input[type=checkbox] {
+  zoom: 135%;
+  position: relative;
+}
+input[type=checkbox]:before {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 3px;
+  border: 2px solid #8cc433;
+  background-color: #e4e7ea;
+}
+input[type=checkbox]:checked:before {
+  content: "";
+  position: absolute;
+  border: 2px solid #8cc433;
+  background-color: #8cc433;
+}
+
+input[type=radio] {
+  zoom: 135%;
+  position: relative;
+}
+input[type=radio]:before {
+  content: "";
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 2px solid #8cc433;
+  background-color: #e4e7ea;
+}
+input[type=radio]:checked:before {
+  content: "";
+  position: absolute;
+  border: 2px solid #8cc433;
+  background-color: #8cc433;
+}
+
+#show_info {
+  text-align: center;
+}
+#show_info .book {
+  border: 1px solid #bbb;
+  width: 170px;
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  margin: 8px;
+  margin-top: 14px;
+  vertical-align: top;
+  border-radius: 6px;
+}
+#show_info .book img {
+  width: 95%;
+  border-radius: 12px;
+  mix-blend-mode: multiply;
+}
+#show_info .infos .name {
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+#show_info .infos .name a {
+  color: #333;
+  font-weight: 400;
+}
+#show_info .infos .name a:hover {
+  color: #8cc433;
+}
+#show_info .infos .author, #show_info .infos .price {
+  font-size: 14px;
+  margin: 4px;
+  color: #666;
+}
+#show_info .infos .author .red, #show_info .infos .price .red {
+  color: #CA2260;
+}
+#show_info .infos .author a {
+  color: #666;
+}
+#show_info .infos .author a:hover {
+  color: #8cc433;
+}
+#show_info .book.detail {
+  display: block;
+  width: 89%;
+  text-align: left;
+  line-height: 24px;
+  color: #666;
+  padding: 10px;
+  margin: 8px;
+  margin-top: 14px;
+  margin-left: 42px;
+}
+#show_info .book.detail img {
+  width: 170px;
+  display: inline-block;
+  vertical-align: middle;
+  mix-blend-mode: multiply;
+}
+#show_info .book.detail .infos {
+  display: inline-block;
+  width: calc(100% - 200px);
+  vertical-align: middle;
+}
+#show_info .book.detail .infos .name {
+  font-size: 18px;
+}
+#show_info .book.detail .infos h3 {
+  margin: 2px;
+  font-size: 14px;
+}
+#show_info .book.detail .big {
+  width: 280px;
+  height: 400px;
+  background-color: grey;
+}
+#show_info .big {
+  width: 250px;
+  height: 380px;
+  vertical-align: top;
+  padding-top: 20px;
+}
+#show_info .detail.big {
+  height: initial;
+}
+#show_info .detail.big img {
+  width: 200px;
+}
+#show_info .detail.big .infos {
+  width: calc(100% - 250px);
+  line-height: 26px;
+}
+#show_info .detail.big .infos .name {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+#show_info .detail.big .infos h3 {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 850px) {
+  body, html {
+    margin: 20px auto;
+    width: 100%;
+  }
+
+  #app {
+    width: 90%;
+    margin: auto;
+  }
+}

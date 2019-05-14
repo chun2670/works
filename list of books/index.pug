@@ -1,0 +1,50 @@
+#app
+  #control_info
+    span
+      a.logo(href="https://www.books.com.tw/web/sys_saletopb/books/03/?loc=P_002_004" target="_blank")
+        img(src="http://pk.ixpanel.com/images/pk/201108/0824/BOOKS.gif")
+      span
+      h2  排行榜資料呈現
+
+    br
+    label 詳細資訊瀏覽模式
+      input.checkbox(type="checkbox" v-model="mode_detail")  
+    br   
+    label.show_dis 優惠顯示 :
+    span(v-for="(id,book) in books")
+      label 第{{id+1}}本
+        input.dis_input(type="checkbox" v-model="book.is_discount")   
+    br
+    label 小呈現
+      input(type="radio" v-model="mode_size" value="small")
+    label 大呈現
+      input(type="radio" v-model="mode_size" value="big")
+
+    br
+  #show_info
+    .book(v-for="book in books" class="{{mode_detail?'detail':''}} {{mode_size}}")
+      img(src="{{book.img}}")
+      .infos
+        //- substring(從第0個字元開始,取到第18個字元)
+        h3.name(v-if="!mode_detail")
+          a(href="{{book.link_book}}" target="_blank") {{book.name.substring(0,18)}}
+        h3.name(v-if="mode_detail")
+          a(href="{{book.link_book}}" target="_blank") {{book.name}}
+
+
+        h3.author 作者: 
+          a(href="{{book.link_author}}" target="_blank") {{book.author}}
+        //- v-if="引號內為true的話"則顯示
+        h3.publish(v-if="mode_detail") 出版社: {{book.publish_house}}
+        //- v-if JS裡 is_dicount為true=有優惠，則顯示此"優惠價"
+        h3.price(v-if="book.is_discount") 優惠價: 
+          span.red {{book.discount*100}}
+          span 折 
+          span.red {{parseInt(book.price*book.discount)}}
+          span 元
+        //- 反之，若JS裡面is_discount為 ! true的相反→ false，則顯示此"價錢"
+        h3.price(v-if="!book.is_discount") 價格: 
+          span.red {{parseInt(book.price)}}
+          span 元
+        h3.publish(v-if="mode_detail") 出版日: {{book.date}}
+

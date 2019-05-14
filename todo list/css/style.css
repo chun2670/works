@@ -1,0 +1,74 @@
+@charset "UTF-8";
+.completed-LineThrough {
+  text-decoration: line-through;
+}
+
+* {
+  font-family: "微軟正黑體";
+  font-weight: 900;
+  border-radius: 4px;
+}
+
+body, html {
+  margin: auto;
+  padding: 0;
+  background-color: #FFCC00;
+}
+
+.container_div {
+  margin-top: 50px;
+  padding: 0;
+  background-color: red;
+  position: relative;
+}
+.container_div #buylist {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 450px;
+  padding: 20px;
+  margin-bottom: 50px;
+  background-color: #f3f3f3;
+  box-shadow: 12px 10px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+}
+.container_div #buylist h1 {
+  height: 80px;
+  padding: 23px;
+  margin: -20px -20px 10px -20px;
+  background-color: #643173;
+  box-sizing: border-box;
+  color: #f3f3f3;
+  font-weight: 500;
+  font-size: 28px;
+  text-align: center;
+  letter-spacing: 2px;
+  border: none;
+}
+.container_div #buylist .btn {
+  background-color: #643173;
+  color: #f3f3f3;
+}
+.container_div #buylist .input-group {
+  margin-top: 30px;
+}
+.container_div #buylist .list-group-item {
+  color: #6C757D;
+}
+.container_div #buylist .nav-link {
+  color: #643173;
+}
+
+.card-footer {
+  background-color: #643173;
+}
+
+.count_todo {
+  color: #f3f3f3;
+  font-weight: 400;
+}
+
+.clean_all {
+  color: #FFCC00;
+  font-size: 15px;
+}

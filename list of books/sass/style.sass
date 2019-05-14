@@ -1,0 +1,181 @@
+// $color_yellow: #f0f0f0
+// $color_dark_yellow: #E5E8EB
+$color_yellow: #FFE18D
+$color_dark_yellow: #FFDA71
+$break_width: 850px
+
+*
+  // border: 1px solid blue
+  font-family: '微軟正黑體'
+body,hmtl
+  margin: 40px auto
+  width: 900px
+  background: linear-gradient(-45deg,$color_yellow 10%,$color_yellow 10%,$color_dark_yellow 10%,$color_dark_yellow 40%,$color_yellow 40%,$color_yellow 60%,$color_dark_yellow 60%,$color_dark_yellow 90%,$color_yellow 90%,$color_yellow 100%)
+  background-size: 46px 46px
+  margin-bottom: 30px
+
+.logo
+  img
+    width: 130px
+    display: inline-block
+h2
+  display: inline-block
+  font-weight: 400
+  
+.dis_input
+  margin-right: 14px
+  margin-left: 0
+
+#app
+  width: 100%
+  #control_info
+    padding-left: 36px
+    margin-bottom: 26px
+  .show_dis
+    padding-right: 10px
+  
+  label
+    font-size: 18px
+    line-height: 32px
+    cursor: pointer
+
+// 改checkbox樣式
+input[type=checkbox]
+  zoom: 135%
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    width: 8px
+    height:  8px
+    border-radius: 3px
+    border: 2px solid #8cc433
+    background-color: #e4e7ea
+  &:checked:before
+    content: ''
+    position: absolute
+    border: 2px solid #8cc433
+    background-color: #8cc433
+  
+// 改radio樣式
+input[type=radio]
+  zoom: 135%
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    width: 9px
+    height:  9px
+    border-radius: 50%
+    border: 2px solid #8cc433
+    background-color: #e4e7ea
+  &:checked:before
+    content: ''
+    position: absolute
+    border: 2px solid #8cc433
+    background-color: #8cc433  
+
+  
+#show_info
+  text-align: center
+  .book
+    border: 1px solid #bbb
+    width: 170px
+    display: inline-block
+    padding: 10px
+    text-align: center
+    margin: 8px
+    margin-top: 14px
+    vertical-align: top
+    border-radius: 6px
+    img
+      width: 95% 
+      border-radius: 12px
+      mix-blend-mode: multiply
+  .infos
+    // width: 170px
+    .name
+      font-size: 18px
+      font-weight: 800
+      margin-top: 6px
+      margin-bottom: 10px
+
+      a
+        color: #333
+        font-weight: 400
+        &:hover
+          color: #8cc433
+
+
+    .author,.price
+      font-size: 14px
+      margin: 4px
+      color: #666
+      .red
+        color: #CA2260
+    .author
+      a
+        color: #666
+        &:hover
+          color: #8cc433
+        
+  .book.detail
+    display: block
+    width: 89%
+    text-align: left
+    line-height: 24px  
+    color: #666
+    padding: 10px
+    margin: 8px
+    margin-top: 14px
+    margin-left: 42px
+    img
+      width: 170px
+      display: inline-block
+      vertical-align: middle
+      mix-blend-mode: multiply
+    .infos
+      display: inline-block
+      width: calc(100% - 200px)
+      vertical-align: middle
+      .name
+        font-size: 18px
+      h3
+        margin: 2px
+        font-size: 14px
+
+    .big
+      width: 280px
+      height: 400px
+      background-color: grey
+
+  .big
+    width: 250px
+    height: 380px
+    vertical-align: top
+    padding-top: 20px
+    
+  .detail.big
+    height: initial
+    img
+      width: 200px
+    .infos
+      width: calc(100% - 250px)
+      line-height: 26px
+      .name
+        font-size: 22px
+        margin-bottom: 10px
+      h3
+        font-size: 16px
+        
+@media screen and (max-width: $break_width) 
+  body,html
+    margin: 20px auto
+    width: 100%
+  #app
+    width: 90%
+    margin: auto
+
+      
+      
+      
