@@ -41,7 +41,9 @@ $(".screen").click(function(){
   }
   $(".pages").css("left", "-" + page*100 + "%")
                         //等於 -100%、-200%...
-  screen_audio.play()
+  screen_audio.play();
+  // 音量 0靜音~1最大聲 
+  screen_audio.volume=0.4
 })
 
 
@@ -77,7 +79,7 @@ $(".wiggle").click(function(){
           $(".phone").css("left","30px")
         }
     
-    //console結數時數字會在21,此時沒有回復到0的位置,因此設定...
+    //console結束時數字會在21,此時沒有回復到0的位置,因此設定...
     if(wiggle_time==21){
       $(".phone").css("left","")  
     }
